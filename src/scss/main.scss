@@ -1,0 +1,131 @@
+// базовые подключения
+@import "vars";
+@import "fonts";
+@import "settings";
+
+.container {
+  margin: 0 auto;
+  padding: 0 15px;
+  max-width: 1200px;
+}
+
+.form {
+  padding: 25px 0;
+}
+
+.form__row {
+  margin-bottom: 20px;
+}
+
+.form__label {
+  margin-bottom: 10px;
+}
+
+.form__input {
+  height: 44px;
+  padding: 0 15px;
+  width: 100%;
+  border: 1px solid var(--grey-light);
+  color: var(--black-dark);
+  font-size: 18px;
+  transition: 0.1s all;
+  &::placeholder {
+    color: var(--black-dark);
+  }
+  &.error {
+    border-color: var(--error);
+    color: var(--black-dark);
+    font-size: 18px;
+  }
+  &:focus {
+    outline: none;
+    border-color: var(--grey-dark);
+  }
+}
+
+.form__checkbox {
+  display: flex;
+  align-items: flex-start;
+}
+
+.form__checkbox__label {
+  cursor: pointer;
+  margin-right: 15px;
+  input {
+    height: 0;
+    width: 0;
+    position: absolute;
+    z-index: -1;
+    opacity: 0;
+  }
+  input + .form__checkbox__input {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    border: 1px solid var(--black-dark);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.1s all;
+    &:hover,
+    &:focus {
+      box-shadow: 0 0 5px rgba($color: #000000, $alpha: 0.5);
+    }
+    svg {
+      transition: 0.1s all;
+      opacity: 0;
+    }
+  }
+  input:checked + .form__checkbox__input {
+    svg {
+      opacity: 1;
+    }
+  }
+}
+
+.form__checkbox__text {
+  font-size: 14px;
+  margin-top: 3px;
+}
+
+.form__sub {
+  margin-top: 30px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  button {
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #fff;
+    background-color: var(--blue);
+    border: none;
+    transition: 0.1s all;
+    font-size: 18px;
+    &:hover {
+      box-shadow: 0 0 10px rgba($color: #000000, $alpha: 0.2);
+    }
+    &:disabled {
+      background-color: var(--grey-dark);
+      pointer-events: none;
+    }
+    svg {
+      fill: #fff;
+      margin-left: 15px;
+    }
+  }
+}
+
+.error {
+  color: var(--error);
+  font-size: 14px;
+  display: block;
+  margin-top: 5px;
+}
+
+@media (max-width: 575px) {
+  .form__checkbox__text {
+    margin-top: 0;
+  }
+}

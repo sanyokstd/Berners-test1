@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+@include('partials/head.html')
+
+<body>
+  <main class="main">
+    <div class="container">
+      <form class="form" id="form">
+        <div class="form__row">
+          <div class="form__label">
+            Имя
+          </div>
+          <input type="text" class="form__input" name="first_name">
+        </div>
+        <div class="form__row">
+          <div class="form__label">
+            Фамилия
+          </div>
+          <input type="text" class="form__input" name="last_name">
+        </div>
+        <div class="form__row">
+          <div class="form__label">
+            Адрес
+          </div>
+          <input type="text" class="form__input" name="address">
+        </div>
+        <div class="form__row">
+          <div class="form__label">
+            Почтовый индекс
+          </div>
+          <input type="text" class="form__input" name="postcode">
+        </div>
+        <div class="form__row">
+          <div class="form__label">
+            Город
+          </div>
+          <input type="text" class="form__input" name="city">
+        </div>
+        <div class="form__row">
+          <div class="form__label">
+            Номер телефона
+          </div>
+          <input type="text" class="form__input" name="phone" id="phone" placeholder="+33">
+        </div>
+        <div class="form__row">
+          <div class="form__label">
+            Электроная почта
+          </div>
+          <input type="text" class="form__input" name="email">
+        </div>
+        <div class="form__row">
+          <div class="form__checkbox">
+            <label class="form__checkbox__label">
+              <input type="checkbox" name="to_checkout" value="1" id="checkbox">
+              <div class="form__checkbox__input">
+                <svg width="15" height="15">
+                  <use href="img/sprite.svg#check">
+                </svg>
+              </div>
+            </label>
+
+            <div class="form__checkbox__text">
+              Я принимаю политику конфиденциальности и принимаю обработку персональных данных, заказы и возвраты
+            </div>
+          </div>
+        </div>
+        <div class="form__sub">
+          <button type="submit" disabled id="submitBtn">
+            Перейти к оплате
+            <svg width="15" height="15">
+              <use href="img/sprite.svg#chevron-right">
+            </svg>
+          </button>
+        </div>
+      </form>
+    </div>
+  </main>
+</body>
+
+@include('partials/foot.html')
+
+</html>
